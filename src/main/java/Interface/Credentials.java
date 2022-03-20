@@ -1,16 +1,17 @@
 package Interface;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 
 
-public class Registration {
+
+public class Credentials {
     private String accountNumber;
-    private static String username;
-    private static String password;
+    private static String user;
+    private static String pass;
     private String loginUser;
     private String loginPass;
 
@@ -18,21 +19,27 @@ public class Registration {
     String space = " ";
 
 
+    // Register for a new account
     public void register() {
 
+
+        Map<String, String> credentials = new HashMap<String, String>();
+
         System.out.println("Enter Desired Username");
-        username = scan.nextLine();
-        if((username.contains(space)) || username.length()<5) {
+        user = scan.nextLine();
+        if((user.contains(space))) {
             System.out.println("Invalid Username");
         }
 
         System.out.println("Enter Desired Password");
-        password = scan.nextLine();
-        if ((password.contains(space)) || password.length() < 8) {
+        pass = scan.nextLine();
+        if ((user.contains(space))) {
             System.out.println("Invalid Password");
         } else {
-            System.out.println("Welcome to TonBerry Bank, " + username + "!");
+            System.out.println("Welcome to TonBerry Bank, " + user + "!");
         }
+
+        credentials.put(user,pass); // HashMap stores username and password
 
 
     }
@@ -45,14 +52,13 @@ public class Registration {
         loginUser = scan.nextLine();
         System.out.println("Enter Password ");
         loginPass = scan.nextLine();
-        //NEED A CREDENTIAL VERIFICATION PROCESS HERE.
 
-        if(username.equals(loginUser) && password.equals(loginPass)){
-            System.out.println("Welcome!");
+        if(user.equals(loginUser) && pass.equals(loginPass)){
+            System.out.println("Welcome Back!");
+
 
         } else {
             System.out.println("Intruder Alert! Tonberry attack!");
-
         }
     }
 }

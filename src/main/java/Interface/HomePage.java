@@ -1,5 +1,7 @@
-package Interface;
 
+
+
+package Interface;
 
 import java.util.Scanner;
 
@@ -15,28 +17,34 @@ public class HomePage {
 
 
         while (true) {
-            //login
+            //Main menu to Login or Register
             System.out.println("-----------------------------------");
-            System.out.println("1. Register a New Account");
-            System.out.println("2. Login to an Existing Account");
+            System.out.println("Register :  Register a New Account");
+            System.out.println("Login : to an Existing Account");
+            System.out.println("Exit : Exit");
             System.out.println("-----------------------------------");
             choice = scan.next();
 
-            if (choice.equals("1")) {
+            if (choice.equals("Register")) {
                 //new registration
-                Registration registration = new Registration();
-                registration.register();
+                Credentials credentials = new Credentials();
+                credentials.register();
 
-            } else if (choice.equals("2")) {
+            } else if (choice.equals("Login")) {
                 //login
-                Registration login = new Registration();
+                Credentials login = new Credentials();
                 login.login();
 
+            } else if (choice.equals ("Exit")) {
+                System.exit(0);
+
             } else {
-                System.out.println("Last time I checked, your only options are a 1 or 2. ");
+                System.out.println("Is it really that difficult to choose a valid option?");
+                }
+
             }
         }
-    }
+
 
 
     // after login or registration, the homepage appears.
@@ -46,13 +54,14 @@ public class HomePage {
         String exit;
 
         //NEED THIS TO RUN AFTER LOGIN OR REGISTRATION VERIFICATION
+
         while (true) {
 
             System.out.println("---------------------------------------------");
-            System.out.println("1 Check your UserInterface.Account UserInterface.Balance");
-            System.out.println("2 See your UserInterface.Account and Routing Number");
-            System.out.println("3 UserInterface.Deposit Money");
-            System.out.println("4 UserInterface.Withdraw Money");
+            System.out.println("1 Check your Gil Balance");
+            System.out.println("2 See your Account and Routing Number");
+            System.out.println("3 Deposit Gil");
+            System.out.println("4 Withdraw Gil");
             System.out.println("5 Exit");
             System.out.println("---------------------------------------------");
 

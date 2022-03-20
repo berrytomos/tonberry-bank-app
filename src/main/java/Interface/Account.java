@@ -1,3 +1,6 @@
+
+
+
 package Interface;
 
 import org.apache.logging.log4j.LogManager;
@@ -5,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Account
 {
-    private int accountNumber; // Will be assigne to each individual user.
+    private int accountNumber; // Random Will be assigned to each individual user.
     private int routingNumber = 50008375;
 
 

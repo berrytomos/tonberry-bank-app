@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-//Single Design Pattern
+//Singleton Design Pattern
 // ---> a design through which you only ever create ONE SINGLE instance
 public class UserConnection {
 
@@ -21,14 +21,14 @@ public class UserConnection {
             "jdbc:postgresql://java-react.cghbrlmpd8rj.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=tonberrybank";
 
     // username and password set
-    private static final String username = "postgres";
-    private static final String password = "kQ5s628vVwW42Q5";
+    private static final String user = "postgres";
+    private static final String pass = "kQ5s628vVwW42Q5";
 
 
     public static Connection getConnection() throws SQLException {
         if (instance == null) {
             // url, username, password >
-            instance = DriverManager.getConnection(url, username, password);
+            instance = DriverManager.getConnection(url, user, pass);
         }
 
         return instance;
